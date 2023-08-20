@@ -1,0 +1,13 @@
+package base;
+
+import org.junit.AfterClass;
+
+public class Hooks extends TestBase {   
+    
+	@AfterClass
+    public void tearDown()
+    {		
+    	driver.close();
+		driver.quit();
+    }
+}

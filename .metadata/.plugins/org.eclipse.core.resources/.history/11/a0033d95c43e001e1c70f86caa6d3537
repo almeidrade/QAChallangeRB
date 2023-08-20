@@ -1,0 +1,34 @@
+package base;
+
+import org.junit.runner.RunWith;
+
+import io.cucumber.java.AfterAll;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		features="src/specifications",
+		glue = {"steps"},
+		monochrome = true,
+		plugin = {"pretty", 
+				  "html:target/HtmlReports/report.html",
+				  "junit:target/JunitReports/report.xml",
+				  "json:target/JSONReports/report.json"},
+		tags = "@regression")
+
+public class TestRunner extends TestBase{
+	
+	public static void TestCleanup() {
+		driver.close();
+		driver.quit();
+	}
+	
+	@AfterAll
+	public static void poc() {
+		driver.close();
+		driver.quit();
+		
+	}
+
+}
