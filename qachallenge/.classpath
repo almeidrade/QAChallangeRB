@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="steps/And/rightBalance/ASBusinessRule2.java|steps/And/rightBalance/ASBusinessRule3.java|steps/Given/rightBalance/GSBusinessRule2.java|steps/Given/rightBalance/GSBusinessRule3.java|steps/Then/rightBalance/TSBusinessRule2.java|steps/Then/rightBalance/TSBusinessRule3.java|steps/When/rightBalance/WSBusinessRule2.java|steps/When/rightBalance/WSBusinessRule3.java" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
@@ -8,6 +8,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
+			<attribute name="module" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>

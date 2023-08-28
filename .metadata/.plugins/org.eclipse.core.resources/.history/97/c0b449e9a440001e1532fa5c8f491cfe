@@ -1,0 +1,41 @@
+package base;
+
+import java.util.Collection;
+
+import base.TestBase.DriverType;
+import base.TestBase.FrontEndType;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.messages.types.Feature;
+
+
+
+
+
+public class Hooks {	
+
+	public static boolean NEW_BROWSER_INSTANCE = true;
+	
+	@Before
+	public static void testSetUp(Scenario scenario, Feature feature) {
+		Collection<String> listTags = scenario.getSourceTagNames();
+		if (listTags.contains("@ScenarioOutlineRB")) {
+			NEW_BROWSER_INSTANCE = false;
+		}	
+		
+		if (NEW_BROWSER_INSTANCE) {
+			TestBase.SetDriverType(DriverType.WEB, FrontEndType.CHROME);
+		}			
+	}
+	
+	@After
+	public static void testCleanup() {		
+		if (NEW_BROWSER_INSTANCE) {
+			TestBase.driver.close();
+			TestBase.driver.quit();
+		}		
+	}
+
+}

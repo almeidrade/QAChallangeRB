@@ -1,0 +1,13 @@
+package pages.rightBalance;
+
+import org.openqa.selenium.By;
+
+public class Careers {
+	public static By txtLastJobYoullEverNeed() {
+		return By.xpath("//*[@class='center-container']//*[contains(text(),'Last job you'll ever need')]");
+	}
+	
+	public static By txtJoinRightBalance() {
+		return By.xpath("//*[@class='center-container']//*[contains(text(),'Join Right Balance')]");
+	}
+}

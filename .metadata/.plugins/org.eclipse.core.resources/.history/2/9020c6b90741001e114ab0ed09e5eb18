@@ -1,0 +1,38 @@
+package base;
+import base.TestBase.DriverType;
+import base.TestBase.FrontEndType;
+import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
+import io.cucumber.messages.types.Scenario;
+
+
+
+
+
+
+
+
+
+public class Hooks {	
+
+	public static boolean NEW_BROWSER_INSTANCE = true;
+	
+	@BeforeAll
+	public static void testSetUp(Scenario scenario) {		
+		if (TestBase.driver == null) {
+			TestBase.SetDriverType(DriverType.WEB, FrontEndType.CHROME);
+		}			
+	}
+	
+	@AfterAll
+	public static void testCleanup(Scenario scenario) {
+//		List<Step> line = scenario.getSteps();
+		if (!scenario.getName().equals("Clicks through headers")) {			
+			TestBase.driver.close();
+			TestBase.driver.quit();
+		}		
+	}
+
+}

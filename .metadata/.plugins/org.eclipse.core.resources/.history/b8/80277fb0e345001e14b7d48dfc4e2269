@@ -1,0 +1,30 @@
+package base;
+import base.TestBase.DriverType;
+import base.TestBase.FrontEndType;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+
+
+public class Hooks {	
+	
+	public static String testName;
+	
+	@Before
+	public static void testSetUp(Scenario scenario) {
+		testName = scenario.getName();
+		if (TestBase.driver.getSessionId() == null) { 
+			TestBase.SetDriverType(DriverType.WEB, FrontEndType.CHROME);
+		}			
+	}
+	
+	@After
+	public static void testCleanup(Scenario scenario) {
+//		List<Step> line = scenario.getSteps();
+		if (!scenario.getName().equals("Clicks through headers")) {	//a good refactoring here would be creating a file that holds scenarios names that should be ignored at this point		
+			TestBase.driver.close();
+			TestBase.driver.quit();
+		}		
+	}
+
+}

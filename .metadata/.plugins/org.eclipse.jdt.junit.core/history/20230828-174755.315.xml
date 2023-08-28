@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="qachallenge" project="qachallenge" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="base.TestRunner" time="39.773">
+    <testsuite name="Right Balance Main Page Tour" time="39.773">
+      <testcase name="Clicks through headers #1" classname="Right Balance Main Page Tour" time="5.034"/>
+      <testcase name="Clicks through headers #2" classname="Right Balance Main Page Tour" time="2.556"/>
+      <testcase name="Clicks through headers #3" classname="Right Balance Main Page Tour" time="2.807"/>
+      <testcase name="Clicks through headers #4" classname="Right Balance Main Page Tour" time="2.789"/>
+      <testcase name="Clicks through headers #5" classname="Right Balance Main Page Tour" time="2.905"/>
+      <testcase name="User fills in the Contact Page form" classname="Right Balance Main Page Tour" time="9.655"/>
+      <testcase name="User fills in the Report malicious form modal with funny message" classname="Right Balance Main Page Tour" time="14.027"/>
+    </testsuite>
+  </testsuite>
+</testrun>

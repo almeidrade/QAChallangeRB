@@ -1,0 +1,82 @@
+package pages.rightBalance;
+
+import static org.junit.Assert.assertEquals;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+
+import base.Helpers;
+import pages.rightBalance.HomePage.Footers;
+
+public class CaseStudies {
+	
+	private static final int DEFAULT_TIMEOUT_SECONDS = 5;
+	
+	/*---------------------------------ELEMENTS Case Studies page---------------------------------*/
+	public static class Headers {
+		public static By txtTrustedByMany() {
+			return By.xpath("//div[@class='center-container']//*[@class='header-heading']");
+		}
+		
+		public static By txtCaseStudies() {
+			return By.xpath("//div[@class='center-container']//*[contains(text(),'Case Studies')]");
+		}
+		//...
+		//...
+	}
+	
+	public static class Body {
+		//...
+		//...	
+	}
+	
+	public static class Footers {
+		public static By txtBeTheNextSuccessStory() {
+			return By.xpath("//*[@class='center-container']//*[@class='cta-heading']");
+		}
+		
+		public static By txtLetsChat() {
+			return By.xpath("//*[@class='center-container']//*[@class='cta-button']");
+		}
+		//...
+		//...
+	}	
+	
+	/*---------------------------------ACTIONS Case Studies page---------------------------------*/	
+	/*---getWebElement---*/
+	public static WebElement getPageWebElement(String screenDisplayedText) throws InterruptedException {
+		switch (screenDisplayedText) {
+		case "BE THE NEXT SUCCESS STORY":
+			return Helpers.getsWebElement(Footers.txtBeTheNextSuccessStory(), DEFAULT_TIMEOUT_SECONDS);
+		case "LET'S CHAT":
+			return Helpers.getsWebElement(Footers.txtLetsChat(), DEFAULT_TIMEOUT_SECONDS);
+		//...
+		//...	
+		default:
+			throw new NoSuchElementException("No such element found!");
+		}
+	}
+	
+	/*---validations---*/
+	public static void validateTxtMessage(String expectedScreenDisplayedText) throws Throwable {
+		expectedScreenDisplayedText = expectedScreenDisplayedText.contains("�") ?  expectedScreenDisplayedText.replace("�", "'") : expectedScreenDisplayedText;
+		switch (expectedScreenDisplayedText) {
+		case "TRUSTED BY MANY":
+			assertEquals(expectedScreenDisplayedText, Helpers.GetText(Headers.txtTrustedByMany(), DEFAULT_TIMEOUT_SECONDS));
+			break;
+		case "Case Studies":
+			assertEquals(expectedScreenDisplayedText, Helpers.GetText(Headers.txtCaseStudies(), DEFAULT_TIMEOUT_SECONDS));			
+		case "BE THE NEXT SUCCESS STORY":
+			assertEquals(expectedScreenDisplayedText, Helpers.GetText(Footers.txtBeTheNextSuccessStory(), DEFAULT_TIMEOUT_SECONDS));
+			break;
+		case "LET'S CHAT":
+			assertEquals(expectedScreenDisplayedText, Helpers.GetText(Footers.txtLetsChat(), DEFAULT_TIMEOUT_SECONDS));
+			break;
+		default:
+			throw new NoSuchElementException("No such element found!");
+		}		
+	}
+
+	
+}

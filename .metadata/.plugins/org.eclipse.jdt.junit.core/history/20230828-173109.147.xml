@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="qachallenge" project="qachallenge" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="base.TestRunner" time="5.092">
+    <testsuite name="Right Balance Main Page Tour" time="5.092">
+      <testcase name="Clicks through headers" classname="Right Balance Main Page Tour" time="5.092"/>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,7 @@
+org.junit.ComparisonFailure: expected:<LAST JOB YOU[']LL EVER NEED> but was:<LAST JOB YOU[’]LL EVER NEED>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at pages.rightBalance.Careers.validateTxtMessage(Careers.java:58)
+	at steps.And.rightBalance.AndStepsInterviewChallenge.the_header_text_element_is_displayed(AndStepsInterviewChallenge.java:27)
+	at ?.the header text element "LAST JOB YOU'LL EVER NEED" is displayed(file:///C:/Users/PC%20Gamer/Repo2/QAChallengeRB/qachallenge/src/specifications/rightBalance/rightBalanceTour.feature:14)
+

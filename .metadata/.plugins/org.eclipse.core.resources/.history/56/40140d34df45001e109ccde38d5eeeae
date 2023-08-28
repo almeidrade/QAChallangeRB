@@ -1,0 +1,69 @@
+package steps.Then.rightBalance;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+
+import base.Helpers;
+import base.Hooks;
+import base.TestBase;
+import io.cucumber.java.en.Then;
+import pages.rightBalance.Careers;
+import pages.rightBalance.CaseStudies;
+import pages.rightBalance.Contact;
+import pages.rightBalance.HomePage;
+import pages.rightBalance.Learn;
+import pages.rightBalance.Team;
+import steps.Given.rightBalance.GivenStepsInterviewChallenge;
+
+public class ThenStepsInterviewChallenge extends TestBase{
+	@Then("the page should display the info {string} at the bottom of the page")
+	public void the_page_should_display_the_info_at_the_bottom_of_the_page(String expectedScreenDisplayedText) throws Throwable {
+		switch (GivenStepsInterviewChallenge.HEADER_BAR_PAGE) {
+		case "HOME PAGE":
+			HomePage.validateTxtMessage(expectedScreenDisplayedText);
+			break;
+		case "CASE STUDIES":
+			CaseStudies.validateTxtMessage(expectedScreenDisplayedText);
+			break;
+		case "TEAM":
+			Team.validateTxtMessage(expectedScreenDisplayedText);
+			break;
+		case "CAREERS":
+			Careers.validateTxtMessage(expectedScreenDisplayedText);
+			break;
+		case "LEARN":
+			Learn.validateTxtMessage(expectedScreenDisplayedText);
+			break;
+		default:
+			throw new NoSuchElementException("Element not found!");
+		}	
+		
+	    if (Hooks.testName.equals("Clicks through headers") && GivenStepsInterviewChallenge.HEADER_BAR_PAGE.equals("LEARN")) {
+			Helpers.cleanUpOnDemand();
+		}
+	}
+	
+	@Then("all fields of the Contact page form must be kept filled in")
+	public void all_fields_of_the_Contact_page_form_must_be_kept_filled_in() throws Throwable {
+	    Contact.validateNameContactpage();
+	    Contact.validateEmailContactpage();
+	    Contact.validatePhoneContactpage();
+	    Contact.validateDropDownContactpage();
+	    Contact.validateDetailsContactpage();
+	    Contact.validateTxtNeverSubmitPasswordsThroughThisForm("Never submit passwords through this form.\nReport malicious form");
+	}
+	
+	@Then("the user types slowly {string}")
+	public void the_user_types_slowly(String funnyMessage) throws InterruptedException {
+	    By element = Contact.ReportAMaliciousFormModal.fldReportMaliciousForm();				
+	    for (char ch: funnyMessage.toCharArray()) {
+	    	TimeUnit.MILLISECONDS.sleep(10);
+	    	Helpers.SendKeys(element, String.valueOf(ch), DEFAULT_TIMEOUT_SECONDS);
+	    	System.out.println(String.valueOf(ch));
+	    }
+	    TimeUnit.MILLISECONDS.sleep(1200); //added explicit sleeping to make it better viewing the actions on the page
+	}
+	
+}

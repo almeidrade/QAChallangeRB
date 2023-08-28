@@ -1,0 +1,29 @@
+package steps.And.rightBalance;
+
+import io.cucumber.java.en.And;
+import pages.rightBalance.CaseStudies;
+import pages.rightBalance.HomePageRB;
+
+public class AndStepsRB {
+	@And("the header message {string} of the {string} header page bar is displayed")
+	public void the_header_message_of_the_header_page_bar_is_displayed(String expectedScreenDisplayedText, String headerBarPage) throws Throwable {
+		switch (headerBarPage) {
+		case "HOME PAGE":
+			HomePageRB.validateTxtMessage(expectedScreenDisplayedText);
+			break;
+		case "CASE STUDIES":
+			CaseStudies.validateTxtMessage(expectedScreenDisplayedText);
+			break;
+		case "Team":			
+			break;
+		case "Careers":			
+			break;
+		case "Learn":			
+			break;
+		case "Contact":			
+			break;
+		default:
+			break;
+		}	    
+	}
+}

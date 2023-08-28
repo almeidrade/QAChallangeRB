@@ -1,0 +1,89 @@
+package pages.rightBalance;
+
+import org.openqa.selenium.By;
+
+import base.Helpers;
+
+public class CaseStudies {
+	
+	private static final int DEFAULT_TIMEOUT_SECONDS = 5;
+	
+	public static class Headers {
+		public static By txtTrustedByMany() {
+			return By.xpath("//*[@class='cta-heading']");
+		}
+		
+		public static By txtCaseStudies() {
+			return By.xpath("//*[@class='center-container']//*[contains(text(),'Case Studies')]");
+		}
+		//...
+		//...
+	}
+	
+	public static class Body {
+		//...
+		//...	
+	}
+	
+	public static class Footers {
+		public static By txtBeTheNextSuccessStory() {
+			return By.xpath("//*[@class='center-container']//*[@class='cta-heading']");
+		}
+		
+		public static By txtLetsChat() {
+			return By.xpath("//*[@class='center-container']//*[@class='cta-button']");
+		}
+		//...
+		//...
+	}
+	
+	
+	public static String getElementText(String txtMessage) throws Throwable {
+		return txtMessage;
+		
+	}	
+	
+	
+	/*---clicks---*/
+	//...
+	//...
+	
+	/*---scrolls---*/
+	public static void scrollsToElement(String screenDisplayedText) throws InterruptedException {
+		switch (screenDisplayedText) {
+		case "Be the next success story":
+			Helpers.ExecuteJavaScriptToScroll(Footers.txtBeTheNextSuccessStory(), DEFAULT_TIMEOUT_SECONDS);
+			break;
+		case "Let's chat":
+			Helpers.ExecuteJavaScriptToScroll(Footers.txtLetsChat(), DEFAULT_TIMEOUT_SECONDS);
+			break;
+		//...
+		//...	
+		default:
+			break;
+		}		
+	}
+	//...
+	//...
+	
+	/*---validations---*/
+	public static void validateTxtMessage(String screenDisplayedText) throws Throwable {
+		switch (screenDisplayedText) {
+		case "Trusted by many":
+			Helpers.GetText(Headers.txtTrustedByMany(), DEFAULT_TIMEOUT_SECONDS);
+			break;
+		case "Case Studies":
+			Helpers.GetText(Headers.txtCaseStudies(), DEFAULT_TIMEOUT_SECONDS);
+		case "Be the next success story":
+			Helpers.GetText(Footers.txtBeTheNextSuccessStory(), DEFAULT_TIMEOUT_SECONDS);
+			break;
+		case "Let's chat ":
+			Helpers.GetText(Footers.txtLetsChat(), DEFAULT_TIMEOUT_SECONDS);
+			break;
+		default:
+			break;
+		}		
+	}
+
+	
+}

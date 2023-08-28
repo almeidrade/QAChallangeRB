@@ -1,0 +1,13 @@
+package pages.rightBalance;
+
+import org.openqa.selenium.By;
+
+public class Learn {
+	public static By txtLearning() {
+		return Team.txtHelpingTechLeadersEvolveHumanKind();
+	}
+	
+	public static By txtForTechnologistsByTechnologists() {
+		return By.xpath("//*[@class='center-container']//*[contains(text(),'Learning')]");
+	}
+}

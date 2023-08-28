@@ -1,23 +1,52 @@
 package base;
 
+import java.util.ArrayList;
 
-import org.junit.jupiter.api.AfterAll;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 
 
 public class Helpers extends TestBase {
-
-	public static By Click(By by) {
-		driver.findElement(by).click();
-		return by;
+	
+	public static boolean CheckIfElementExists(By by, int timeoutSeconds) throws InterruptedException {
+		int max_timeout_count = timeoutSeconds*4;
+		for (int i = 0; i < max_timeout_count; i++) {
+			try {
+				if (driver.findElements(by).size() != 0) {
+					return true;
+				}
+			} catch (Exception e) {
+				Thread.sleep(250);
+			}
+		}		
+		return false;
 	}
 
-	public static By SendKeys(By by, String text) {
-			driver.findElement(by).sendKeys(text);
-		return by;
+	public static By Click(By by, int timeoutSeconds) throws InterruptedException {
+		int max_timeout_count = timeoutSeconds*4;
+		for (int i = 0; i < max_timeout_count; i++) {
+			try {				
+				driver.findElement(by).click();
+				return by;
+			} catch (Exception e) {
+				Thread.sleep(250);
+			}
+		}
+		throw new NoSuchElementException(String.format("Element not found after %d seconds!", timeoutSeconds));
+	}
+
+	public static By SendKeys(By by, String textToFill, int timeoutSeconds) throws InterruptedException {
+		boolean elementFound = CheckIfElementExists(by, timeoutSeconds);
+		if (elementFound) {
+			 driver.findElement(by).sendKeys(textToFill);
+			 return by;
+		}
+		throw new NoSuchElementException(String.format("Element not found after %d seconds!", timeoutSeconds));
 	}
 
 	public static By Select(By by, String value) {
@@ -31,43 +60,78 @@ public class Helpers extends TestBase {
 	}
 
 	public static void HoverElement(String element) {
-		Actions builder = new Actions(driver);
-		builder.moveToElement(driver.findElement(By.xpath("//*[@" + element + "]"))).perform();
+		Actions action = new Actions(driver);
+		action.moveToElement(driver.findElement(By.xpath("//*[@" + element + "]"))).perform();
 	}
-
+	
+	public static Actions setSelenionActions() {
+		Actions action = new Actions(driver);
+		return action;
+	}
+	
+	public static void SendKeysByActionEvent(String textToType) {
+		Actions builder = new Actions(driver);
+		builder.sendKeys(textToType).perform();
+	}
+	
+	
 	public static String GetText(By by, int timeoutSeconds) throws Throwable {
-
-		for (int i = 0; i < timeoutSeconds; i++) {
+		int max_timeout_count = timeoutSeconds*4;
+		for (int i = 0; i < max_timeout_count; i++) {
 			try {
 				return driver.findElement(by).getText();
+//				return driver.findElement(by).getAttribute("Value");
 			} catch (Exception e) {
-				Thread.sleep(1000);
+				Thread.sleep(250);
 			}
 		}
-		return null;
+		throw new NoSuchElementException(String.format("Element not found after %d seconds!", timeoutSeconds));
 	}
-
-	public static boolean ElementExists(By by, int timeoutSeconds) throws InterruptedException {
-		for (int i = 0; i <timeoutSeconds; i++) {
+	
+	public static String GetText(By by, String attributeValue, int timeoutSeconds) throws Throwable {
+		int max_timeout_count = timeoutSeconds*4;
+		for (int i = 0; i < max_timeout_count; i++) {
 			try {
-				if (driver.findElements(by).size() != 0) {
-					return true;
-				}
+				return driver.findElement(by).getAttribute("Value");
 			} catch (Exception e) {
-				Thread.sleep(1000);
+				Thread.sleep(250);
+			}
+		}
+		throw new NoSuchElementException(String.format("Element not found after %d seconds!", timeoutSeconds));
+	}
+	
+	public static WebElement getsWebElement(By by, int timeoutSeconds) throws InterruptedException {
+		int max_timeout_count = timeoutSeconds*4;
+		for (int i = 0; i < max_timeout_count; i++) {
+			try {
+				return driver.findElement(by);
+			} catch (Exception e) {
+				Thread.sleep(250);
 			}
 		}		
-		return false;
+		throw new NoSuchElementException(String.format("Element not found after %d seconds!", timeoutSeconds));
 	}
 	
-	public static void AttachFileToWebPage(By by, String pathAndName) {
-		SendKeys(by, pathAndName);
+	public static void AttachFileToWebPage(By by, String pathAndName, int timeoutSeconds) throws InterruptedException {
+		SendKeys(by, pathAndName, timeoutSeconds);
 	}
 	
-	@AfterAll
-	public static void testeCleanUp() {
-		driver.close();
-		driver.quit();
+	public static void ExecuteJavaScriptToScroll(WebElement element, int timeoutSeconds) throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", element);
+	}	
+	
+	public static ArrayList<String> getWindowTabs() {		
+		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+		return tabs;
 	}
-
+	
+	public static void switchToTab(String tabIndex) {
+		driver.switchTo().window(tabIndex);
+	}
+	
+	public static void cleanUpOnDemand() {
+		TestBase.driver.close();
+	    TestBase.driver.quit();
+	}
 }

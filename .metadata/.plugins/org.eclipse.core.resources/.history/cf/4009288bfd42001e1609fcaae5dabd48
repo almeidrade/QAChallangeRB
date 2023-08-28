@@ -1,0 +1,16 @@
+package steps.Given.rightBalance;
+
+import base.TestBase;
+import io.cucumber.java.en.Given;
+import pages.rightBalance.HomePageRB;
+
+public class GivenStepsRB extends TestBase {
+	
+	protected static String ELEMENT; 
+	
+	@Given("the user is in {string} page")
+	public void the_user_clicks(String homePageField) throws InterruptedException {
+		ELEMENT = homePageField;
+	    HomePageRB.clickBtnHomePageFieldBar(homePageField);
+	}
+}

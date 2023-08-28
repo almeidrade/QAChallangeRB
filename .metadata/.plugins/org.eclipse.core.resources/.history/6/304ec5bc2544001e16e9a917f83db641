@@ -1,0 +1,13 @@
+package pages.rightBalance;
+
+import org.openqa.selenium.By;
+
+public class Team {
+	public static By txtHelpingTechLeadersEvolveHumanKind() {
+		return By.xpath("//*[@class='header-globe']//*[contains(text(),'HELPING TECHNOLOGY LEADERS EVOLVE HUMANKIND')]");
+	}
+	
+	public static By txtForTechnologistsByTechnologists() {
+		return By.xpath("//*[@class='center-container']//*[contains(text(),'For technologists by technologists')]");
+	}
+}

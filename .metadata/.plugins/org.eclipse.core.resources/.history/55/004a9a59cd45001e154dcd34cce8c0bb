@@ -1,0 +1,61 @@
+package pages.rightBalance;
+
+import static org.junit.Assert.assertEquals;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+
+import base.Helpers;
+
+public class Team {
+	private static final int DEFAULT_TIMEOUT_SECONDS = 5;
+	
+	/*---------------------------------ELEMENTS Case Studies page---------------------------------*/
+	public static class Headers {
+		public static By txtHelpingTechLeardersEvolveHumankind() {
+			return By.xpath("//div[@class='header-heading']");
+		};
+		//...
+		//...
+	}
+	
+	public static class Body {
+		//...
+		//...	
+	}
+	
+	public static class Footers {
+		public static By txtForTechsByTechs() {
+			return By.xpath("//div[@class='cta-heading']");
+		}
+		public static By txtStartNow() {
+			return By.xpath("//button[@class='cta-button']");
+		}
+		//...
+		//...
+	}	
+	
+	/*---------------------------------ACTIONS Case Studies page---------------------------------*/
+	
+	/*---clicks---*/
+	public static void clickBtnWebElement(String elementTxtToClick) throws InterruptedException {
+		switch (elementTxtToClick) {
+		case "":			
+			//... ToDo		
+		default:
+			throw new NoSuchElementException("Element not found!");
+		}		
+	}
+	
+	/*---validations---*/
+	public static void validateTxtMessage(String expectedScreenDisplayedText) throws Throwable {
+		switch (expectedScreenDisplayedText) {
+		case "HELPING TECHNOLOGY LEADERS EVOLVE HUMANKIND":
+			assertEquals(expectedScreenDisplayedText, Helpers.GetText(Headers.txtHelpingTechLeardersEvolveHumankind(), DEFAULT_TIMEOUT_SECONDS));
+			break;
+		default:
+			throw new NoSuchElementException("No such element found!");
+		}		
+	}
+}

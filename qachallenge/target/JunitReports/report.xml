@@ -1,26 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="46.45">
-    <testcase classname="Feature to test Form Page funcionality" name="User fills the in an improper way" time="13.311">
-        <system-out><![CDATA[Given the user is in the home page of "automationPractice"..................passed
-Given the user navigates to the contact form page...........................passed
-And does not fill all text fields properly..................................passed
-When the user clicks the submit button......................................passed
-Then then the "error" message "There is 1 error" is displayed to the customer.passed
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="7" time="40.472">
+    <testcase classname="Right Balance Main Page Tour" name="Clicks through headers" time="4.858">
+        <system-out><![CDATA[Given the user is in the home page of "rightBalance"........................passed
+Given the user is in "HOME PAGE" part of the main page......................passed
+And the header text element "RIGHT BALANCE" is displayed....................passed
+When the user scrolls down until the text element "Succeed as a strong technology leader" is displayed.passed
+Then the page should display the info "LET�S CHAT" at the bottom of the page.passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Feature to test Form Page funcionality" name="User fills the form with invalid email" time="17.038">
-        <system-out><![CDATA[Given the user is in the home page of "automationPractice"..................passed
-Given the user navigates to the contact form page...........................passed
-When and fills the email field in an invalid way............................passed
-Then the email field is highlited warning an error..........................passed
+    <testcase classname="Right Balance Main Page Tour" name="Clicks through headers 2" time="2.555">
+        <system-out><![CDATA[Given the user is in the home page of "rightBalance"........................passed
+Given the user is in "CASE STUDIES" part of the main page...................passed
+And the header text element "TRUSTED BY MANY" is displayed..................passed
+When the user scrolls down until the text element "BE THE NEXT SUCCESS STORY" is displayed.passed
+Then the page should display the info "LET�S CHAT" at the bottom of the page.passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Feature to test Form Page funcionality" name="User fills the form Submit Error" time="15.979">
-        <system-out><![CDATA[Given the user is in the home page of "automationPractice"..................passed
-Given the user navigates to the contact form page...........................passed
-And fills all text fields properly..........................................passed
-When the user clicks the submit button......................................passed
-Then then the "success" message "Your message has been successfully sent to our team." is displayed to the customer.passed
+    <testcase classname="Right Balance Main Page Tour" name="Clicks through headers 3" time="2.689">
+        <system-out><![CDATA[Given the user is in the home page of "rightBalance"........................passed
+Given the user is in "TEAM" part of the main page...........................passed
+And the header text element "HELPING TECHNOLOGY LEADERS EVOLVE HUMANKIND" is displayed.passed
+When the user scrolls down until the text element "FOR TECHNOLOGISTS BY TECHNOLOGISTS" is displayed.passed
+Then the page should display the info "START NOW" at the bottom of the page.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Right Balance Main Page Tour" name="Clicks through headers 4" time="2.778">
+        <system-out><![CDATA[Given the user is in the home page of "rightBalance"........................passed
+Given the user is in "CAREERS" part of the main page........................passed
+And the header text element "LAST JOB YOU�LL EVER NEED" is displayed........passed
+When the user scrolls down until the text element "JOIN RIGHT BALANCE" is displayed.passed
+Then the page should display the info "APPLY" at the bottom of the page.....passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Right Balance Main Page Tour" name="Clicks through headers 5" time="2.84">
+        <system-out><![CDATA[Given the user is in the home page of "rightBalance"........................passed
+Given the user is in "LEARN" part of the main page..........................passed
+And the header text element "LEARNING" is displayed.........................passed
+When the user scrolls down until the text element "FOR TECHNOLOGISTS BY TECHNOLOGISTS" is displayed.passed
+Then the page should display the info "LET�S CHAT" at the bottom of the page.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Right Balance Main Page Tour" name="User fills in the Contact Page form" time="9.805">
+        <system-out><![CDATA[Given the user is in the home page of "rightBalance"........................passed
+Given the user is in the "CONTACT" page form................................passed
+When the user fills in all the fields.......................................passed
+Then all fields of the Contact page form must be kept filled in.............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Right Balance Main Page Tour" name="User fills in the Report malicious form modal with funny message" time="14.78">
+        <system-out><![CDATA[Given the user is in the home page of "rightBalance"........................passed
+Given the user is in the Report Malicious modal form........................passed
+And clicks the "Other" radio button.........................................passed
+Then the user types slowly "Thanks for watching! This was just a funny show case of test scenarios with Selenium. Nothing is going to be submitted. Bye! :)".passed
 ]]></system-out>
     </testcase>
 </testsuite>

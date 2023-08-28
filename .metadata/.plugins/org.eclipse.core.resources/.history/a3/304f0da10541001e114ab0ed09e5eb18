@@ -1,0 +1,40 @@
+package base;
+
+import java.util.List;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+
+import base.TestBase.DriverType;
+import base.TestBase.FrontEndType;
+
+
+import io.cucumber.messages.types.Scenario;
+import io.cucumber.messages.types.Step;
+
+
+
+
+
+
+public class Hooks {	
+
+	public static boolean NEW_BROWSER_INSTANCE = true;
+	
+	@BeforeAll
+	public static void testSetUp() {		
+		if (TestBase.driver == null) {
+			TestBase.SetDriverType(DriverType.WEB, FrontEndType.CHROME);
+		}			
+	}
+	
+	@AfterAll
+	public static void testCleanup(Scenario scenario) {
+		List<Step> line = scenario.getSteps();
+		if (!scenario.getName().equals("Clicks through headers")) {			
+			TestBase.driver.close();
+			TestBase.driver.quit();
+		}		
+	}
+
+}

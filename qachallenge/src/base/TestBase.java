@@ -3,11 +3,7 @@ package base;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class TestBase {
@@ -23,6 +19,7 @@ public class TestBase {
 	public static DriverType DRIVERTYPE;
 	public static FrontEndType FRONTENDTYPE;
 	public static RemoteWebDriver driver;
+	public static int DEFAULT_TIMEOUT_SECONDS = 5;
 	public String reportLocation = "./target";
 	
 	public static Properties getProperty() throws IOException {
@@ -66,19 +63,10 @@ public class TestBase {
 			}
 		case WEB:
 			switch (FRONTENDTYPE) {
-			case CHROME:
-//				ChromeOptions options = new ChromeOptions();				
-//				  options.addArguments("--remote-allow-origins=*");
-//				  options.addArguments("--disable-notifications"); 
-//				  DesiredCapabilities dp = new DesiredCapabilities(); 
-//				  dp.setCapability(ChromeOptions.CAPABILITY, options);
-//				  options.merge(dp);				 
-				 
+			case CHROME:				 
 				String projectPath = System.getProperty("user.dir");
 				System.setProperty("webdriver.chrome.driver", projectPath + "/src/support/Drivers/chromedriver.exe");
 				driver = new ChromeDriver();
-				driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-				driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 				driver.manage().window().maximize();
 				break;
 			case FIREFOX:

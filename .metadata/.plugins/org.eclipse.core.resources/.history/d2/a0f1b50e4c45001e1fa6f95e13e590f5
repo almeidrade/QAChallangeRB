@@ -1,0 +1,58 @@
+package pages.rightBalance;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+
+public class Learn {
+	private static final int DEFAULT_TIMEOUT_SECONDS = 5;
+	
+	/*---------------------------------ELEMENTS Case Studies page---------------------------------*/
+	public static class Headers {
+		//... ToDo
+		//... ToDo
+	}
+	
+	public static class Body {
+		//... ToDo
+		//... ToDo	
+	}
+	
+	public static class Footers {
+		//... ToDo
+		//... ToDo
+	}	
+	
+	/*---------------------------------ACTIONS Case Studies page---------------------------------*/
+	/*---getWebElement---*/
+	public static WebElement getPageWebElement(String screenDisplayedText) throws InterruptedException {
+		switch (screenDisplayedText) {
+		case "":
+			//...return ToDo
+		//... ToDo
+		//... ToDo	
+		default:
+			throw new NoSuchElementException("No such element found!");
+		}
+	}
+	
+	/*---clicks---*/
+	public static void clickBtnWebElement(String elementTxtToClick) throws InterruptedException {
+		switch (elementTxtToClick) {
+		case "":			
+			//... ToDo		
+		default:
+			throw new NoSuchElementException("Element not found!");
+		}		
+	}
+	
+	/*---validations---*/
+	public static void validateTxtMessage(String expectedScreenDisplayedText) throws Throwable {
+		switch (expectedScreenDisplayedText) {
+		case "":
+			//... return ToDo
+		default:
+			throw new NoSuchElementException("No such element found!");
+		}		
+	}
+}

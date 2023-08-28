@@ -1,0 +1,125 @@
+package pages.rightBalance;
+
+import static org.junit.Assert.assertEquals;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+
+import base.Helpers;
+import base.TestBase;
+
+public class HomePageRB extends TestBase{
+	
+	private static final int DEFAULT_TIMEOUT_SECONDS = 5;
+	
+	/*---------------------------------ELEMENTS main page---------------------------------*/
+	public static class Headers {
+		public static By txtHomePageLogo() {		
+			return By.xpath("//*[@class='company-name']//h1[contains(text(),'Right Balance')]");
+		}
+		
+		public static By txtHighSpeedStaffAugmentation() {		
+			return By.xpath("//*[@class='center']//*[@class='headline fade'][contains(text(),'HIGH-SPEED STAFF AUGMENTATION')]");
+		}
+		//...
+		//...
+		
+	}
+	
+	public static class HeaderBar {				
+		public static By btnHomePageBarTeam() {		
+			return By.xpath("//*[@class='menu']//*[contains(text(),' TEAM ')]");
+		}
+		
+		public static By btnHomePageBarCaseStudies() {		
+			return By.xpath("//*[@class='menu']//*[contains(text(),' CASE STUDIES ')]");
+		}
+
+		public static By btnHomePageBarCareers() {		
+			return By.xpath("//*[@class='container']//*[contains(text(),' CAREERS ')]");
+		}
+		
+		public static By btnHomePageBarLearn() {		
+			return By.xpath("//*[@class='menu']//*[contains(text(),' LEARN ')]");
+		}
+	}		
+	
+	public static class Body {
+		//...
+		//...
+	}
+	
+	public static class Footers {
+		public static By txtSucceedAsStrongTechLeader() {
+			return By.xpath("//*[@class='center']//*[@class='headline fade'][contains(text(),'Succeed as a strong technology leader')]");			
+		}
+		
+		public static By txtLetsChat() {
+			return By.xpath("//section[@id='form-slide']//button[@class='cta-button']");			
+		}
+		//...
+		//...
+	}
+	/*---------------------------------ACTIONS main page---------------------------------*/
+	/*---getWebElement---*/
+	public static void getPageWebElement(String screenDisplayedText) throws InterruptedException {
+		switch (screenDisplayedText) {
+		case "Succeed as a strong technology leader":
+			Helpers.getsWebElement(Footers.txtSucceedAsStrongTechLeader(), DEFAULT_TIMEOUT_SECONDS);
+			break;
+		case "LET'S CHAT":
+			Helpers.getsWebElement(Footers.txtLetsChat(), DEFAULT_TIMEOUT_SECONDS);
+			break;
+		//...
+		//...	
+		default:
+			throw new NoSuchElementException("No such element found!");
+		}
+	}
+	
+	/*---clicks---*/
+	public static void clickBtnHomePageFieldBar(String homePageField) throws InterruptedException {
+		switch (homePageField) {
+		case "HOME PAGE":			
+			break;
+		case "CASE STUDIES":				 
+			Helpers.Click(HeaderBar.btnHomePageBarCaseStudies(), DEFAULT_TIMEOUT_SECONDS);				
+			break;
+		case "Team":
+			Helpers.Click(HeaderBar.btnHomePageBarTeam(), DEFAULT_TIMEOUT_SECONDS);
+			break;
+		case "Careers":
+			Helpers.Click(HeaderBar.btnHomePageBarCareers(), DEFAULT_TIMEOUT_SECONDS);			
+			break;
+		case "Learn":
+			Helpers.Click(HeaderBar.btnHomePageBarLearn(), DEFAULT_TIMEOUT_SECONDS);			
+			break;
+		case "Contact":
+			break;
+		default:
+			throw new NoSuchElementException("Element not found!");
+		}		
+	}	
+	
+	/*---validations---*/
+	public static void validateTxtMessage(String expectedScreenDisplayedText) throws Throwable {
+		switch (expectedScreenDisplayedText) {
+		case "RIGHT BALANCE":
+			assertEquals(expectedScreenDisplayedText, Helpers.GetText(Headers.txtHomePageLogo(), DEFAULT_TIMEOUT_SECONDS));
+			break;
+		case "HIGH-SPEED STAFF AUGMENTATION":
+			assertEquals(expectedScreenDisplayedText, Helpers.GetText(Headers.txtHighSpeedStaffAugmentation(), DEFAULT_TIMEOUT_SECONDS));			
+		case "LET'S CHAT":
+			assertEquals(expectedScreenDisplayedText, Helpers.GetText(Footers.txtLetsChat(), DEFAULT_TIMEOUT_SECONDS));
+			break;
+		case "Succeed as a strong technology leader":
+			assertEquals(expectedScreenDisplayedText, Helpers.GetText(Footers.txtSucceedAsStrongTechLeader(), DEFAULT_TIMEOUT_SECONDS));
+			break;
+		default:
+			throw new NoSuchElementException("No such element found!");
+		}		
+	}
+	
+	
+	
+}

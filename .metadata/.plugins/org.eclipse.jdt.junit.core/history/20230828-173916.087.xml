@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="qachallenge" project="qachallenge" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="base.TestRunner" incomplete="true">
+    <testsuite name="Right Balance Main Page Tour" incomplete="true">
+      <testcase name="Clicks through headers" classname="Right Balance Main Page Tour" time="27.46"/>
+      <testcase name="User fills in the Contact Page form" classname="Right Balance Main Page Tour" incomplete="true"/>
+    </testsuite>
+  </testsuite>
+</testrun>

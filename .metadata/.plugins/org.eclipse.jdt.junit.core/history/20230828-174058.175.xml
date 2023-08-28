@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="qachallenge" project="qachallenge" tests="2" started="2" failures="0" errors="3" ignored="0">
+  <testsuite name="base.TestRunner" time="0.105">
+    <testsuite name="Right Balance Main Page Tour" time="0.105">
+      <testcase name="Clicks through headers" classname="Right Balance Main Page Tour" time="0.086">
+        <error>java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.remote.RemoteWebDriver.getSessionId()" because "base.TestBase.driver" is null&#13;
+	at base.Hooks.testSetUp(Hooks.java:16)&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="User fills in the Contact Page form" classname="Right Balance Main Page Tour" time="0.017">
+        <error>java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.remote.RemoteWebDriver.getSessionId()" because "base.TestBase.driver" is null&#13;
+	at base.Hooks.testSetUp(Hooks.java:16)&#13;
+&#13;
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.remote.RemoteWebDriver.close()" because "base.TestBase.driver" is null&#13;
+	at base.Hooks.testCleanup(Hooks.java:25)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

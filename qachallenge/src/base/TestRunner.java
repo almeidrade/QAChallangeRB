@@ -13,6 +13,10 @@ import io.cucumber.junit.CucumberOptions;
 				  "html:target/HtmlReports/report.html",
 				  "junit:target/JunitReports/report.xml",
 				  "json:target/JSONReports/report.json"},
-		tags = "@regression")
+		tags = "@regressionRightBalance")
+//		tags = "@regressionAutomationPractice")
+
+
+
 
 public class TestRunner {}

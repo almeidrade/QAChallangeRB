@@ -1,0 +1,44 @@
+package steps.And.rightBalance;
+
+import java.util.concurrent.TimeUnit;
+
+import io.cucumber.java.en.And;
+import pages.rightBalance.CaseStudies;
+import pages.rightBalance.Contact;
+import pages.rightBalance.HomePage;
+import steps.Given.rightBalance.GivenStepsInterviewChallenge;
+
+public class AndStepsInterviewChallenge {
+	@And("the header text element {string} is displayed")
+	public void the_header_text_element_is_displayed(String expectedScreenDisplayedText) throws Throwable {			
+		switch (GivenStepsInterviewChallenge.HEADER_BAR_PAGE) {
+		case "HOME PAGE":
+			HomePage.validateTxtMessage(expectedScreenDisplayedText);
+			break;
+		case "CASE STUDIES":
+			CaseStudies.validateTxtMessage(expectedScreenDisplayedText);
+			break;
+		case "Team":
+			//...
+			//...
+			break;
+		case "Careers":
+			//...
+			break;
+		case "Learn":
+			//...
+			break;
+		case "Contact":
+			//...
+			break;
+		default:
+			break;
+		}
+	}
+	
+	@And("clicks the {string} radio button")
+	public void clicks_the_radio_button(String string) {
+	    Contact.ReportAMaliciousFormModal.radioButtonOther();
+	    TimeUnit.SECONDS.sleep(1)
+	}
+}

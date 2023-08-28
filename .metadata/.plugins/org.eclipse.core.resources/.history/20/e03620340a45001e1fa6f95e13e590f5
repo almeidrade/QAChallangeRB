@@ -1,0 +1,27 @@
+package steps.Given.rightBalance;
+
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import base.Helpers;
+import base.TestBase;
+import io.cucumber.java.en.Given;
+import pages.rightBalance.HomePage;
+
+public class GSBusinessRuleInterviewChallenge extends TestBase {
+	
+	public static String HEADER_BAR_PAGE; 
+	
+	@Given("the user is in {string} page")
+	public void the_user_clicks(String fieldBar) throws InterruptedException {
+		HEADER_BAR_PAGE = fieldBar;
+	    HomePage.clickBtnHomePageFieldBar(fieldBar);
+	}
+	
+	@Given("the user is in the {string} page form")
+	public void the_user_is_in_the_page_form(String fieldBar) throws InterruptedException {
+	    HomePage.clickBtnHomePageFieldBar(fieldBar);
+	    ArrayList<String> tabs = Helpers.getWindowTabs();
+	    TimeUnit.SECONDS.sleep(2); //added explicit sleeping to make it better viewing the actions on the page
+	}
+}

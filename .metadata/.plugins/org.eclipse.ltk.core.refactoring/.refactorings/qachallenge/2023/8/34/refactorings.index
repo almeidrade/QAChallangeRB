@@ -1,3 +1,87 @@
 1692499364150	Move compilation unit
 1692499375888	Delete element
 1692504673858	Delete element
+1692585435034	Rename package 'steps.andSteps'
+1692585450054	Rename package 'steps.givenSteps'
+1692585661283	Move compilation unit
+1692585683836	Move compilation unit
+1692585695674	Move compilation unit
+1692585703353	Move compilation unit
+1692585885128	Move compilation unit
+1692585958112	Move compilation unit
+1692585998276	Move compilation unit
+1692586025201	Move compilation unit
+1692586191490	Move 'ContactFormError.feature' to 'automationPractice'
+1692586199547	Move 'ContactFormSuccess.feature' to 'automationPractice'
+1692587356201	Rename resource 'rightBalance'
+1692591639702	Delete element
+1692591644110	Delete element
+1692591651689	Delete element
+1692591757754	Rename package 'steps.And.automationPractice'
+1692591769868	Rename package 'steps.Given.automationPractice'
+1692591778871	Rename package 'steps.Then.automationPractice'
+1692591785293	Rename package 'steps.When.automationPractice'
+1692591795693	Delete element
+1692591979964	Move compilation unit
+1692592022818	Rename package 'steps.And.automationPractice'
+1692592136285	Delete element
+1692592314839	Move compilation unit
+1692592326211	Delete element
+1692592426177	Rename package 'steps.And.RightBalance'
+1692592452402	Rename package 'steps.And.rightBalance'
+1692592469358	Rename package 'steps.And.Test'
+1692592559600	Move compilation unit
+1692592565105	Delete element
+1692592594645	Rename compilation unit 'bb.java'
+1692592662546	Move compilation unit
+1692592669979	Delete element
+1692592720256	Move compilation unit
+1692592724780	Delete element
+1692593169209	Rename package 'specifications.automationRightBalance'
+1692593304096	Rename resource 'rightBalance.feature'
+1692625631040	Move compilation unit
+1692625639159	Move compilation unit
+1692625644414	Delete element
+1692626071780	Rename compilation unit 'b.java'
+1692626603029	Rename compilation unit 'HomePage.java'
+1692626620250	Rename compilation unit 'HomePageRightBalance.java'
+1692626643315	Rename compilation unit 'HomePageRB.java'
+1692626659009	Rename compilation unit 'HomePageRightBalance.java'
+1692626681727	Delete element
+1692648425952	Rename compilation unit 'b.java'
+1692648638655	Rename type 'GivenSteps'
+1692648653483	Rename type 'HomePage'
+1692649029303	Rename type 'GivenAllSites'
+1692679897152	Rename compilation unit 'b.java'
+1692680028294	Rename compilation unit 'HomePageRB.java'
+1692744017225	Rename type 'HomePageAP'
+1692744049681	Rename type 'HomePage'
+1692744062408	Rename type 'HomePageAutomationPractice'
+1692744075003	Rename type 'ContactUsPage'
+1692744241760	Rename type 'HomePageRightBalance'
+1692746068508	Rename type 'HomePageRBWhenSteps'
+1692746081690	Rename type 'WhenSteps'
+1692746087128	Rename type 'RBWhenSteps'
+1692746122546	Rename type 'HomePageAPGivenSteps'
+1692746137859	Rename type 'HomePageRBGivenSteps'
+1692930660826	Delete element
+1693064396350	Copy compilation unit
+1693064427717	Delete element
+1693064588885	Rename type 'HomePageRB'
+1693064598104	Rename type 'HomePageAP'
+1693065550095	Rename type 'GivenStepsRB'
+1693065567386	Rename type 'GenericGiven'
+1693065605152	Rename type 'BusinessRuleInterviewChallange'
+1693065638715	Rename type 'ThenStepsRB'
+1693065651289	Rename type 'WhenStepsRB'
+1693065668376	Rename type 'AndStepsRB'
+1693065828602	Rename type 'ASBusinessRuleInterviewChallange'
+1693065843096	Rename type 'GSBusinessRuleInterviewChallange'
+1693065849094	Rename type 'TSBusinessRuleInterviewChallange'
+1693065855665	Rename type 'WSBusinessRuleInterviewChallange'
+1693066256460	Copy file
+1693066287534	Delete element
+1693066310659	Delete element
+1693066474201	Copy file
+1693066541423	Copy file
+1693066566740	Delete element
